@@ -1,6 +1,6 @@
 Name     : kata-image
 Version  : 1.0.0
-Release  : 2
+Release  : 3
 URL      : https://github.com/kata-containers/agent
 Source0  : https://github.com/kata-containers/agent/releases/download/1.0.0/kata-containers.tar.gz
 Summary  : Kata Containers image
