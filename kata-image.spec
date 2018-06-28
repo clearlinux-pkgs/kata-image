@@ -7,6 +7,8 @@ Summary  : Kata Containers image
 Group    : Image
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause ISC MIT MPL-2.0-no-copyleft-exception
 
+%define agent_commit a099747
+
 %description
 Kata Containers image
 
@@ -17,13 +19,13 @@ Kata Containers image
 ImageDir=%{buildroot}/usr/share/kata-containers
 
 mkdir -p ${ImageDir}
-install -p kata-containers-image_clearlinux_agent_a099747.img ${ImageDir}/kata-containers-image_clearlinux_agent_a099747.img
-ln -sf kata-containers-image_clearlinux_agent_a099747.img ${ImageDir}/kata-containers.img
-install -p kata-containers-initrd_alpine_agent_a099747.initrd ${ImageDir}/kata-containers-initrd_alpine_agent_a099747.initrd
-ln -sf kata-containers-initrd_alpine_agent_a099747.initrd ${ImageDir}/kata-containers-initrd.img
+install -p kata-containers-image_clearlinux_agent_%{agent_commit}.img ${ImageDir}/kata-containers-image_clearlinux_agent_%{agent_commit}.img
+ln -sf kata-containers-image_clearlinux_agent_%{agent_commit}.img ${ImageDir}/kata-containers.img
+install -p kata-containers-initrd_alpine_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd_alpine_agent_%{agent_commit}.initrd
+ln -sf kata-containers-initrd_alpine_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd.img
 
 %files
 /usr/share/kata-containers/kata-containers.img
 /usr/share/kata-containers/kata-containers-initrd.img
-/usr/share/kata-containers/kata-containers-image_clearlinux_agent_a099747.img
-/usr/share/kata-containers/kata-containers-initrd_alpine_agent_a099747.initrd
+/usr/share/kata-containers/kata-containers-image_clearlinux_agent_%{agent_commit}.img
+/usr/share/kata-containers/kata-containers-initrd_alpine_agent_%{agent_commit}.initrd
