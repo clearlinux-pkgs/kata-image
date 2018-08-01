@@ -1,13 +1,13 @@
 Name     : kata-image
-Version  : 1.0.0
+Version  : 1.1.0
 Release  : 4
 URL      : https://github.com/kata-containers/agent
-Source0  : https://github.com/kata-containers/agent/releases/download/1.0.0/kata-containers.tar.gz
+Source0  : https://github.com/kata-containers/agent/releases/download/1.1.0/kata-containers-1.1.0-7b458b18ffc-x86_64.tar.gz
 Summary  : Kata Containers image
 Group    : Image
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause ISC MIT MPL-2.0-no-copyleft-exception
 
-%define agent_commit a099747
+%define agent_commit 7b458b18ffc
 
 %description
 Kata Containers image
@@ -19,13 +19,13 @@ Kata Containers image
 ImageDir=%{buildroot}/usr/share/kata-containers
 
 mkdir -p ${ImageDir}
-install -p kata-containers-image_clearlinux_agent_%{agent_commit}.img ${ImageDir}/kata-containers-image_clearlinux_agent_%{agent_commit}.img
-ln -sf kata-containers-image_clearlinux_agent_%{agent_commit}.img ${ImageDir}/kata-containers.img
-install -p kata-containers-initrd_alpine_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd_alpine_agent_%{agent_commit}.initrd
-ln -sf kata-containers-initrd_alpine_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd.img
+install -p kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img ${ImageDir}/kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img
+ln -sf kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img ${ImageDir}/kata-containers.img
+install -p kata-containers-initrd_clearlinux_%{version}_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd_clearlinux_%{version}_agent_%{agent_commit}.initrd
+ln -sf kata-containers-initrd_clearlinux_%{version}_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd.img
 
 %files
 /usr/share/kata-containers/kata-containers.img
 /usr/share/kata-containers/kata-containers-initrd.img
-/usr/share/kata-containers/kata-containers-image_clearlinux_agent_%{agent_commit}.img
-/usr/share/kata-containers/kata-containers-initrd_alpine_agent_%{agent_commit}.initrd
+/usr/share/kata-containers/kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img
+/usr/share/kata-containers/kata-containers-initrd_clearlinux_%{version}_agent_%{agent_commit}.initrd
