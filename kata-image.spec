@@ -1,13 +1,14 @@
 Name     : kata-image
-Version  : 1.3.1
-Release  : 9
+Version  : 1.5.0.rc2
+Release  : 10
 URL      : https://github.com/kata-containers/agent
-Source0  : https://github.com/kata-containers/agent/releases/download/1.3.1/kata-containers-1.3.1-c7fdd324cda-x86_64.tar.gz
+Source0  : https://github.com/kata-containers/agent/releases/download/1.5.0-rc2/kata-containers-1.5.0-rc2-91a87bc7176-x86_64.tar.gz
 Summary  : Kata Containers image
 Group    : Image
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause ISC MIT MPL-2.0-no-copyleft-exception
 
-%define agent_commit c7fdd324cda
+%define agent_commit 91a87bc7176
+%define version 1.5.0-rc2
 
 %description
 Kata Containers image
