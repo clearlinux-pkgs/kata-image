@@ -1,14 +1,14 @@
 Name     : kata-image
-Version  : 1.8.2
-Release  : 19
+Version  : 1.9.1
+Release  : 20
 URL      : https://github.com/kata-containers/agent
-Source0  : https://github.com/kata-containers/agent/releases/download/1.8.2/kata-containers-1.8.2-912748e9d0-x86_64.tar.gz
+Source0  : https://github.com/kata-containers/agent/releases/download/1.9.1/kata-containers-1.9.1-d4bbd8007f-x86_64.tar.gz
 Summary  : Kata Containers image
 Group    : Image
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause ISC MIT MPL-2.0-no-copyleft-exception
 
-%define agent_commit  912748e9d0
-%define version 1.8.2
+%define agent_commit  d4bbd8007f
+%define version 1.9.1
 
 %description
 Kata Containers image
