@@ -1,14 +1,14 @@
 Name     : kata-image
-Version  : 1.9.1
-Release  : 21
+Version  : 1.10.0
+Release  : 22
 URL      : https://github.com/kata-containers/agent
-Source0  : https://github.com/kata-containers/agent/releases/download/1.9.1/kata-containers-1.9.1-d4bbd8007f-x86_64.tar.gz
+Source0  : https://github.com/kata-containers/agent/releases/download/1.10.0/kata-static-1.10.0-x86_64.tar.xz
 Summary  : Kata Containers image
 Group    : Image
 License  : Apache-2.0 BSD-2-Clause BSD-3-Clause ISC MIT MPL-2.0-no-copyleft-exception
 
-%define agent_commit  d4bbd8007f
-%define version 1.9.1
+%define agent_commit a8007c2969
+%define version 1.10.0
 
 %description
 Kata Containers image
@@ -20,9 +20,9 @@ Kata Containers image
 ImageDir=%{buildroot}/usr/share/kata-containers
 
 mkdir -p ${ImageDir}
-install -p kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img ${ImageDir}/kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img
+install -p opt/kata/share/kata-containers/kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img ${ImageDir}/kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img
 ln -sf kata-containers-image_clearlinux_%{version}_agent_%{agent_commit}.img ${ImageDir}/kata-containers.img
-install -p kata-containers-initrd_alpine_%{version}_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd_alpine_%{version}_agent_%{agent_commit}.initrd
+install -p opt/kata/share/kata-containers/kata-containers-initrd_alpine_%{version}_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd_alpine_%{version}_agent_%{agent_commit}.initrd
 ln -sf kata-containers-initrd_alpine_%{version}_agent_%{agent_commit}.initrd ${ImageDir}/kata-containers-initrd.img
 
 %files
